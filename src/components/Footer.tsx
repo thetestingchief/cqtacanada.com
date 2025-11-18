@@ -120,7 +120,7 @@ export default function Footer() {
 
         {/* Copyright and Legal Links */}
         <div className="mt-8 pt-6 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <p>&copy; {new Date().getFullYear()} CQTA Canada. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} CQTA. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="/privacy-policy" className="!text-white hover:!text-canada-red transition-colors">
               Privacy Policy

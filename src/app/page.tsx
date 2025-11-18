@@ -30,7 +30,7 @@ export default function Home() {
         <div className="site-container">
           <h2 className="text-3xl font-bold text-center mb-8">Our Mission</h2>
           <p className="text-lg text-white text-center max-w-4xl mx-auto">
-            CQTA Canada is dedicated to fostering a vibrant community of software quality assurance professionals.
+            CQTA is dedicated to fostering a vibrant community of software quality assurance professionals.
             We provide resources, networking opportunities, and advocacy to elevate the standards of software testing
             and quality engineering in Canada. Join us in building a future where quality is paramount in software development.
           </p>

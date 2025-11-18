@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Hero
-        title="About CQTA Canada"
+        title="About CQTA"
         subtitle="We are a community advancing software quality engineering across Canada."
         image="/hero-about.jpg"
       />
@@ -13,7 +13,7 @@ export default function About() {
           <div className="bg-white p-8 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold mb-4">CQTA's Background</h2>
             <p className="text-gray-600 mb-6">
-              Founded in 2020, CQTA Canada emerged from the growing need for a dedicated community focused on software quality engineering.
+              Founded in 2020, CQTA emerged from the growing need for a dedicated community focused on software quality engineering.
               Our founders, experienced QA professionals from across Canada, recognized the importance of collaboration and knowledge sharing
               in advancing the field of software testing.
             </p>

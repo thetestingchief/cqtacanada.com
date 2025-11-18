@@ -1,10 +1,10 @@
-# CQTA Canada Website
+# CQTA Website
 
 A modern, professional website for the Canadian Software Quality Testing Association (CQTA), built with Next.js and Tailwind CSS.
 
 ## About CQTA
 
-CQTA Canada is dedicated to advancing software quality engineering and supporting testing professionals across Canada. Our mission is to foster a vibrant community of QA professionals through education, networking, and advocacy.
+CQTA is dedicated to advancing software quality engineering and supporting testing professionals across Canada. Our mission is to foster a vibrant community of QA professionals through education, networking, and advocacy.
 
 ## Features
 
@@ -63,8 +63,8 @@ src/
 
 ## Contributing
 
-We welcome contributions to improve the CQTA Canada website. Please feel free to submit issues or pull requests.
+We welcome contributions to improve the CQTA website. Please feel free to submit issues or pull requests.
 
 ## License
 
-© 2025 CQTA Canada. All rights reserved.
+© 2025 CQTA. All rights reserved.

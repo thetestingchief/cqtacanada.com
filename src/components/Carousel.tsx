@@ -20,7 +20,7 @@ type Props = {
 const defaultSlides: Slide[] = [
   {
     image: '/hero-maple.jpg',
-    title: 'CQTA Canada',
+    title: 'CQTA',
     subtitle: 'Connecting and growing the QA community across Canada',
     overlay: 'multi',
   },

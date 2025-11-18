@@ -33,7 +33,7 @@ export default function Contact() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white p-8 rounded-lg shadow-md">
           <p className="text-gray-600 mb-6 text-center">
-            Have questions about CQTA Canada? Want to get involved? We'd love to hear from you.
+            Have questions about CQTA? Want to get involved? We'd love to hear from you.
           </p>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
