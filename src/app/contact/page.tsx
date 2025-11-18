@@ -104,9 +104,8 @@ export default function Contact() {
             </div>
           </form>
         </div>
-          </div>
+        </div>
         </div>
       </div>
-    </div>
   );
 }
