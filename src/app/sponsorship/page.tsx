@@ -53,7 +53,7 @@ export default function Sponsorship() {
                   <li key={i}>{benefit}</li>
                 ))}
               </ul>
-              <button className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+              <button className="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700">
                 Contact Us
               </button>
             </div>
@@ -63,7 +63,7 @@ export default function Sponsorship() {
           <p className="text-gray-600 mb-4">
             Custom sponsorship packages are available. Contact us to discuss your specific needs.
           </p>
-          <button className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700">
+          <button className="bg-gray-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-700">
             Get in Touch
           </button>
         </div>
