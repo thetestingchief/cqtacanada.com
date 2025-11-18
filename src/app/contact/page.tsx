@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 
+import Hero from "../../components/Hero";
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -25,10 +27,11 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-16">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">Contact Us</h1>
-        <div className="bg-white p-8 rounded-lg shadow-md">
+    <div className="min-h-screen bg-gray-50">
+      <Hero title="Contact Us" subtitle="Have questions? Reach out to the CQTA community." image="/hero-contact.jpg" />
+      <div className="py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white p-8 rounded-lg shadow-md">
           <p className="text-gray-600 mb-6 text-center">
             Have questions about CQTA Canada? Want to get involved? We'd love to hear from you.
           </p>
@@ -100,6 +103,8 @@ export default function Contact() {
               </button>
             </div>
           </form>
+        </div>
+          </div>
         </div>
       </div>
     </div>

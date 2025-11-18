@@ -3,6 +3,7 @@
 :root {
   /* Canada theme colors */
   --canada-red: #dc2626; /* matches Tailwind primary */
+  --rogers-red: #cc0000;
   --canada-white: #ffffff;
   --canada-grey: #6b7280; /* matches Tailwind secondary */
   --background: var(--canada-white);
@@ -79,6 +80,30 @@ button {
   display: flex;
   align-items: center;
 }
+
+/* Rogers-like top navigation */
+.top-nav {
+  background: var(--rogers-red);
+  color: var(--canada-white);
+}
+.top-nav a { color: var(--canada-white); }
+.top-nav a:hover { opacity: 0.95; }
+
+/* Hero overlay variants */
+.hero-overlay-red { background: linear-gradient(180deg, rgba(204,0,0,0.28), rgba(0,0,0,0.35)); }
+.hero-overlay-white { background: linear-gradient(180deg, rgba(255,255,255,0.45), rgba(255,255,255,0.0)); }
+.hero-overlay-black { background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.55)); }
+.hero-overlay-multi { background: linear-gradient(180deg, rgba(255,255,255,0.35) 0%, rgba(204,0,0,0.2) 40%, rgba(0,0,0,0.45) 100%); }
+
+/* Alternate section backgrounds */
+.section-alt-1 { background: var(--canada-grey); color: var(--canada-white); }
+.section-alt-1 h2 { color: var(--rogers-red); }
+.section-alt-2 { background: var(--canada-white); color: var(--foreground); }
+.section-alt-2 h2 { color: var(--canada-grey); }
+
+/* CTA variations */
+.btn-rogers { background: var(--rogers-red); color: var(--canada-white); }
+.btn-ghost { background: transparent; color: var(--rogers-red); border: 1px solid rgba(204,0,0,0.12); }
 
 .hero-overlay {
   background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45));

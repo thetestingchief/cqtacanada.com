@@ -1,3 +1,5 @@
+import Hero from "../../components/Hero";
+
 export default function Events() {
   const upcomingEvents = [
     {
@@ -41,10 +43,10 @@ export default function Events() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-center mb-12 text-gray-800">Events</h1>
-
+    <div className="min-h-screen bg-gray-50">
+      <Hero title="Events" subtitle="Upcoming and past events across Canada." image="/hero-events.jpg" />
+      <div className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <section className="mb-16">
           <h2 className="text-3xl font-semibold mb-8 text-gray-800">Upcoming Events</h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -77,6 +79,7 @@ export default function Events() {
             ))}
           </div>
         </section>
+        </div>
       </div>
     </div>
   );

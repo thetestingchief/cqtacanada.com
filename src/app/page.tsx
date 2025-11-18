@@ -1,24 +1,10 @@
+import Hero from '../components/Hero';
 import Carousel from '../components/Carousel';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section - full width background image with overlay */}
-      <section className="relative w-full hero-bg">
-        <div className="absolute inset-0 hero-overlay"></div>
-        <div className="relative z-10 py-28 w-full">
-          <div className="site-container text-center text-white">
-            <h1 className="hero-title mb-4">Welcome to CQTA Canada</h1>
-            <p className="hero-sub max-w-3xl mx-auto mb-8">
-              Advancing software quality engineering and supporting testing professionals across Canada.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#join" className="cta-primary px-6 py-3 rounded-lg font-semibold inline-block hover:opacity-95">Join Newsletter</a>
-              <a href="/partnership" className="cta-secondary px-6 py-3 rounded-lg font-semibold inline-block hover:opacity-95">Become a Partner</a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Hero title="Welcome to CQTA Canada" subtitle="Advancing software quality engineering across Canada." image="/hero-maple.jpg" />
 
       {/* Mission Section */}
       <section className="py-16">

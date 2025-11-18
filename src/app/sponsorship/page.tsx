@@ -1,3 +1,5 @@
+import Hero from "../../components/Hero";
+
 export default function Sponsorship() {
   const sponsorshipOptions = [
     {
@@ -36,36 +38,39 @@ export default function Sponsorship() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">Sponsorship Options</h1>
-        <p className="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-          Support CQTA Canada and gain visibility among software quality professionals. Choose from our sponsorship tiers
-          designed to meet different investment levels and marketing goals.
-        </p>
-        <div className="grid md:grid-cols-3 gap-8">
-          {sponsorshipOptions.map((option, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-              <h2 className="text-2xl font-semibold mb-2 text-center">{option.level}</h2>
-              <p className="text-3xl font-bold text-blue-600 mb-4 text-center">{option.price}</p>
-              <ul className="list-disc list-inside text-gray-600 space-y-2 mb-6">
-                {option.benefits.map((benefit, i) => (
-                  <li key={i}>{benefit}</li>
-                ))}
-              </ul>
-              <button className="w-full bg-primary text-white py-2 rounded hover:bg-red-700">
-                Contact Us
-              </button>
-            </div>
-          ))}
-        </div>
-        <div className="text-center mt-12">
-          <p className="text-gray-600 mb-4">
-            Custom sponsorship packages are available. Contact us to discuss your specific needs.
+    <div className="min-h-screen bg-gray-50">
+      <Hero title="Sponsorship Options" subtitle="Support CQTA and gain visibility among Canadian testing professionals." image="/hero-sponsorship.jpg" />
+      <div className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">Sponsorship Options</h1>
+          <p className="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+            Support CQTA Canada and gain visibility among software quality professionals. Choose from our sponsorship tiers
+            designed to meet different investment levels and marketing goals.
           </p>
-          <button className="bg-secondary text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-700">
-            Get in Touch
-          </button>
+          <div className="grid md:grid-cols-3 gap-8">
+            {sponsorshipOptions.map((option, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+                <h2 className="text-2xl font-semibold mb-2 text-center">{option.level}</h2>
+                <p className="text-3xl font-bold text-blue-600 mb-4 text-center">{option.price}</p>
+                <ul className="list-disc list-inside text-gray-600 space-y-2 mb-6">
+                  {option.benefits.map((benefit, i) => (
+                    <li key={i}>{benefit}</li>
+                  ))}
+                </ul>
+                <button className="w-full bg-primary text-white py-2 rounded hover:bg-red-700">
+                  Contact Us
+                </button>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-12">
+            <p className="text-gray-600 mb-4">
+              Custom sponsorship packages are available. Contact us to discuss your specific needs.
+            </p>
+            <button className="bg-secondary text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-700">
+              Get in Touch
+            </button>
+          </div>
         </div>
       </div>
     </div>

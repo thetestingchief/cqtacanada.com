@@ -1,3 +1,5 @@
+import Hero from "../../../components/Hero";
+
 export default function PartnerEvents() {
   const upcomingEvents = [
     {
@@ -20,8 +22,10 @@ export default function PartnerEvents() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50">
+      <Hero title="Partner Events" subtitle="Events organized by our partners and collaborators." image="/hero-events.jpg" />
+      <div className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold text-center mb-12 text-gray-800">Partner Events</h1>
 
         <section className="mb-16">
@@ -56,6 +60,7 @@ export default function PartnerEvents() {
             ))}
           </div>
         </section>
+        </div>
       </div>
     </div>
   );
