@@ -1,8 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Canada theme colors */
+  --canada-red: #dc2626; /* matches Tailwind primary */
+  --canada-white: #ffffff;
+  --canada-grey: #6b7280; /* matches Tailwind secondary */
+  --background: var(--canada-white);
+  --foreground: #111827; /* gray-900 */
+  --muted: #6b7280;
+  --accent: #f3f4f6;
 }
 
 @theme inline {
@@ -14,13 +20,87 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0b0b0b;
+    --foreground: #f9fafb;
   }
+}
+
+html, body, #__next {
+  height: 100%;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings and text */
+h1, h2, h3, h4 {
+  color: var(--foreground);
+}
+
+a {
+  color: var(--canada-red);
+}
+
+button {
+  font-weight: 600;
+}
+
+/* Utility container used across pages */
+.site-container {
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Simple accessible focus style */
+:focus {
+  outline: 3px solid rgba(220,38,38,0.18);
+  outline-offset: 2px;
+}
+
+/* Hero background utility using the maple leaf artwork */
+.hero-bg {
+  /* Prefer a local high-resolution raster image in public/hero-maple.jpg.
+     If not present, try a Pexels scenic image (red canoes) as an external fallback,
+     then fall back to the SVG. Download the image and place it at
+     `public/hero-maple.jpg` for best performance and reliability. */
+  background-image: url('/hero-maple.jpg'), url('https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg?auto=compress&cs=tinysrgb&w=1920'), url('/maple-leaf.svg');
+  background-size: cover, cover, contain;
+  background-position: center center, center center, center;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-overlay {
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45));
+}
+
+.hero-title {
+  font-size: clamp(1.75rem, 3.5vw, 3.5rem);
+  line-height: 1.05;
+  font-weight: 700;
+}
+
+.hero-sub {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  color: var(--accent);
+}
+
+.cta-primary {
+  background: var(--canada-red);
+  color: var(--canada-white);
+}
+
+.cta-secondary {
+  background: rgba(255,255,255,0.9);
+  color: var(--canada-red);
 }

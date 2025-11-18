@@ -1,22 +1,21 @@
+import Carousel from '../components/Carousel';
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary to-secondary text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            Welcome to CQTA Canada
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Advancing software quality engineering and supporting testing professionals across Canada.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-accent">
-              Join Newsletter
-            </button>
-            <button className="bg-secondary text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-700">
-              Become a Partner
-            </button>
+    <div className="min-h-screen bg-white">
+      {/* Hero Section - full width background image with overlay */}
+      <section className="relative w-full hero-bg">
+        <div className="absolute inset-0 hero-overlay"></div>
+        <div className="relative z-10 py-28 w-full">
+          <div className="site-container text-center text-white">
+            <h1 className="hero-title mb-4">Welcome to CQTA Canada</h1>
+            <p className="hero-sub max-w-3xl mx-auto mb-8">
+              Advancing software quality engineering and supporting testing professionals across Canada.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="#join" className="cta-primary px-6 py-3 rounded-lg font-semibold inline-block hover:opacity-95">Join Newsletter</a>
+              <a href="/partnership" className="cta-secondary px-6 py-3 rounded-lg font-semibold inline-block hover:opacity-95">Become a Partner</a>
+            </div>
           </div>
         </div>
       </section>
