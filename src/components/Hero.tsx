@@ -3,11 +3,15 @@ export default function Hero({
   subtitle,
   image = '/hero-maple.jpg',
   overlay = 'multi',
+  ctaText,
+  ctaLink,
 }: {
   title: string;
   subtitle?: string;
   image?: string;
   overlay?: 'multi' | 'red' | 'white' | 'black' | 'grey';
+  ctaText?: string;
+  ctaLink?: string;
 }) {
   const style = {
     backgroundImage: `url(${image})`,
@@ -31,6 +35,16 @@ export default function Hero({
         <div className="flex flex-col items-center justify-center w-screen px-4 text-center text-white">
           <h1 className="hero-title mb-4">{title}</h1>
           {subtitle && <p className="hero-sub max-w-3xl mx-auto mb-8">{subtitle}</p>}
+          {ctaText && ctaLink && (
+            <a
+              href={ctaLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="carousel-btn px-8 py-4 rounded-lg font-bold text-lg shadow-lg transition-colors inline-block"
+            >
+              {ctaText}
+            </a>
+          )}
         </div>
       </div>
     </section>
