@@ -1,4 +1,6 @@
+"use client";
 import { Poppins } from 'next/font/google';
+import { motion } from 'framer-motion';
 import Carousel from '../components/Carousel';
 
 const poppins = Poppins({ variable: '--font-poppins', subsets: ['latin'], weight: ['300','400','600','700'] });
@@ -18,27 +20,40 @@ export default function Home() {
       />
 
       {/* Main Content Sections */}
-      <section className="py-16">
-          {/* About Us Section */}
-          <section className="py-16 bg-gray-50">
-            <div className="site-container max-w-3xl mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-6">About us</h2>
-              <p className="text-lg text-gray-800 text-center">
-                The Canadian Quality and Testing Association (CQTA) is a non-profit organization which runs a national-level community forum dedicated to Quality Engineering (QE) in Canada. QE professionals represent around 30% of the IT workforce in the country. Our mission is to foster collaboration among diverse professionals in this field through events, mentorship programs, networking opportunities, and more. With over 1000+ members, including QE leaders from various parts of Canada, we are one of the fastest-growing social media groups in the QE space in Canada. Our goal is to make Canada the global hub for testing!
-              </p>
-              <div className="flex justify-center mt-8">
-                <a
-                  href="/about"
-                  className="carousel-btn"
-                >
-                  Learn More
-                </a>
-              </div>
+      <motion.section
+        className="py-16"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+      >
+        {/* About Us Section */}
+        <div className="py-16 bg-gray-50">
+          <div className="site-container max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-6">About us</h2>
+            <p className="text-lg text-gray-800 text-center">
+              The Canadian Quality and Testing Association (CQTA) is a non-profit organization which runs a national-level community forum dedicated to Quality Engineering (QE) in Canada. QE professionals represent around 30% of the IT workforce in the country. Our mission is to foster collaboration among diverse professionals in this field through events, mentorship programs, networking opportunities, and more. With over 1000+ members, including QE leaders from various parts of Canada, we are one of the fastest-growing social media groups in the QE space in Canada. Our goal is to make Canada the global hub for testing!
+            </p>
+            <div className="flex justify-center mt-8">
+              <a
+                href="/about"
+                className="carousel-btn"
+              >
+                Learn More
+              </a>
             </div>
-          </section>
+          </div>
+        </div>
+      </motion.section>
 
       {/* Highlights Section */}
-      <section className="py-16 bg-gray-900">
+      <motion.section
+        className="py-16 bg-gray-900"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+      >
         <div className="site-container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="border border-gray-300 rounded-xl p-8 flex flex-row items-center bg-transparent">
@@ -90,11 +105,16 @@ export default function Home() {
           </div>
           </div>
         </div>
-      </section>
-      </section>
+      </motion.section>
 
       {/* Previous Events Section */}
-      <section className="py-16 section-alt-2">
+      <motion.section
+        className="py-16 section-alt-2"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
+      >
         <div className="site-container">
           <h2 className="text-3xl font-bold text-center mb-12">Previous Events</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -118,7 +138,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }
