@@ -1,16 +1,24 @@
 "use client";
 // EventCard for rendering event details in the carousel
 function EventCard({ event }: { event: typeof events[0] }) {
+  const placeholder = "/placeholder-event.jpg";
   return (
-    <div className="flex flex-col md:flex-row items-center gap-2 bg-neutral-900 rounded-xl p-2 md:p-3 w-full max-w-2xl shadow-lg min-h-0">
-      <img src={event.image} alt={event.title} className="w-full md:w-1/3 max-h-20 rounded-lg object-cover" />
+    <div className="flex flex-row items-center gap-4 bg-neutral-900 rounded-xl p-3 w-full max-w-2xl shadow-lg min-h-0">
+      <div className="flex-shrink-0 w-24 h-24 md:w-32 md:h-32 rounded-lg overflow-hidden bg-gray-200 flex items-center justify-center">
+        <img
+          src={event.image || placeholder}
+          alt={event.title}
+          className="w-full h-full object-cover"
+          onError={e => { (e.target as HTMLImageElement).src = placeholder; }}
+        />
+      </div>
       <div className="flex-1 flex flex-col gap-1 text-white">
-        <div className="flex items-center gap-1 mb-1">
-          <div className="bg-white text-red-600 rounded-lg px-2 py-1 text-center font-bold text-sm">
+        <div className="flex items-center gap-2 mb-1">
+          <div className="bg-white text-red-600 rounded-lg px-2 py-1 text-center font-bold text-sm min-w-12">
             <div className="text-xs">{event.dateShortMonth}</div>
             <div className="text-lg leading-none">{event.dateDay}</div>
           </div>
-          <h3 className="text-lg md:text-xl font-semibold leading-tight">{event.title}</h3>
+          <h3 className="text-base md:text-xl font-semibold leading-tight break-words whitespace-normal" style={{ wordBreak: 'break-word', maxWidth: '60vw' }}>{event.title}</h3>
         </div>
         <div className="flex items-center gap-1 text-sm">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 text-red-600">

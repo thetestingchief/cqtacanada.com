@@ -50,7 +50,7 @@ export default function Partnership() {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
