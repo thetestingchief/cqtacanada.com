@@ -44,7 +44,7 @@ export default function Events() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Hero title="Events" subtitle="Upcoming and past events across Canada." image="/hero-events.jpg" />
+      <Hero title="Events" subtitle="Upcoming and past events across Canada." image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" />
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <section className="mb-16">

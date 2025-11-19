@@ -28,7 +28,7 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Hero title="Contact Us" subtitle="Have questions? Reach out to the CQTA community." image="/hero-contact.jpg" />
+      <Hero title="Contact Us" subtitle="Have questions? Reach out to the CQTA community." image="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1200&q=80" />
       <div className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white p-8 rounded-lg shadow-md">

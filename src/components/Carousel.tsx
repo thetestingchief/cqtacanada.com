@@ -22,7 +22,7 @@ const defaultSlides: Slide[] = [
     image: '/hero-canada.jpg',
     title: 'CQTA',
     subtitle: 'Connecting and growing the QA community across Canada',
-    overlay: 'multi',
+    overlay: 'red',
   },
 ];
 

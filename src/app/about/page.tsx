@@ -6,7 +6,7 @@ export default function About() {
       <Hero
         title="About CQTA"
         subtitle="We are a community advancing software quality engineering across Canada."
-        image="/hero-about.jpg"
+        image="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80" // teamwork, community
       />
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

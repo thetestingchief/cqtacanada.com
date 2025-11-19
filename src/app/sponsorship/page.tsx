@@ -87,7 +87,7 @@ export default function Sponsorship() {
       <Hero 
         title="CQTA Sponsorship Opportunities" 
         subtitle="Partner with CQTA to elevate your brand and contribute to the advancement of quality engineering across the nation." 
-        image="/hero-sponsorship.jpg" 
+        image="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80" 
       />
       
       <div className="py-16">
