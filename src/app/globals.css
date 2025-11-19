@@ -1,3 +1,22 @@
+/* Carousel button custom style */
+.carousel-btn {
+  background: var(--canada-red);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: bold;
+  font-size: 1.125rem;
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.08);
+  border: 2px solid var(--canada-red);
+  transition: all 0.2s;
+  display: inline-block;
+}
+.carousel-btn:hover, .carousel-btn:focus {
+  background: #fff;
+  color: var(--canada-red);
+  border-color: var(--canada-red);
+  text-decoration: none;
+}
 @import "tailwindcss";
 
 :root {

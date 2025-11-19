@@ -65,11 +65,22 @@ export default function Carousel({ slides, autoPlay = true, autoPlayInterval = 5
               <div className="site-container text-center text-white">
                 {s.title && <h2 className="hero-title mb-4">{s.title}</h2>}
                 {s.subtitle && <p className="hero-sub max-w-3xl mx-auto mb-6">{s.subtitle}</p>}
-                {s.ctaText && (
-                  <a href={s.ctaLink || '#'} className="inline-block btn-rogers px-6 py-3 rounded-lg font-semibold">
-                    {s.ctaText}
+                <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                  <a
+                    href="https://ca.linkedin.com/company/canadian-quality-and-testing-association"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="carousel-btn"
+                  >
+                    Join the community
                   </a>
-                )}
+                  <a
+                    href="/about"
+                    className="carousel-btn"
+                  >
+                    Learn more
+                  </a>
+                </div>
               </div>
             </div>
           </div>
