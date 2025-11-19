@@ -2,12 +2,12 @@ export default function Hero({
   title,
   subtitle,
   image = '/hero-maple.jpg',
-  overlay = 'black',
+  overlay = 'multi',
 }: {
   title: string;
   subtitle?: string;
   image?: string;
-  overlay?: 'multi' | 'red' | 'white' | 'black';
+  overlay?: 'multi' | 'red' | 'white' | 'black' | 'grey';
 }) {
   const style = {
     backgroundImage: `url(${image})`,
@@ -21,6 +21,7 @@ export default function Hero({
     red: 'hero-overlay-red',
     white: 'hero-overlay-white',
     black: 'hero-overlay-black',
+    grey: 'hero-overlay-grey',
   }[overlay || 'multi'];
 
   return (
