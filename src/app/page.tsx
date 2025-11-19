@@ -6,7 +6,16 @@ const poppins = Poppins({ variable: '--font-poppins', subsets: ['latin'], weight
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      <Carousel />
+      <Carousel
+        slides={[{
+          image: '/hero-canada.jpg',
+          title: 'Empowering Quality Engineering in Canada',
+          subtitle: 'Join the fastest-growing community of QE professionals shaping the future of testing.',
+          overlay: 'red',
+          ctaText: 'Join the community',
+          ctaLink: 'https://www.linkedin.com/company/cqtacanada/',
+        }]}
+      />
 
       {/* Font demos */}
       <section className="py-16">
