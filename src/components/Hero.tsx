@@ -2,7 +2,7 @@ export default function Hero({
   title,
   subtitle,
   image = '/hero-maple.jpg',
-  overlay = 'multi',
+  overlay = 'black',
 }: {
   title: string;
   subtitle?: string;

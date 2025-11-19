@@ -185,7 +185,7 @@ button {
 /* Hero overlay variants */
 .hero-overlay-red { background: linear-gradient(180deg, rgba(204,0,0,0.28), rgba(0,0,0,0.35)); }
 .hero-overlay-white { background: linear-gradient(180deg, rgba(255,255,255,0.45), rgba(255,255,255,0.0)); }
-.hero-overlay-black { background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.55)); }
+.hero-overlay-black { background: linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0.6)); }
 .hero-overlay-multi { background: linear-gradient(180deg, rgba(255,255,255,0.35) 0%, rgba(204,0,0,0.2) 40%, rgba(0,0,0,0.45) 100%); }
 
 /* Alternate section backgrounds */
