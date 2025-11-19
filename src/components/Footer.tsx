@@ -22,7 +22,10 @@ export default function Footer() {
             <Link href="/" className="flex items-center mb-3">
               <img src="/main-logo.svg" alt="CQTA" className="h-16 w-auto" />
             </Link>
-            <p className="text-base text-center lg:text-left font-semibold" style={{ color: '#cc0000' }}>Canadian Quality<br />and Testing Association</p>
+            <div className="text-base text-center lg:text-left brand-text" style={{ color: '#cc0000' }}>
+              <div>Canadian Quality</div>
+              <div className="line-small">and Testing Association</div>
+            </div>
           </div>
 
           {/* Quick Links */}
