@@ -1,7 +1,92 @@
 "use client";
+// EventCard for rendering event details in the carousel
+function EventCard({ event }: { event: typeof events[0] }) {
+  return (
+    <div className="flex flex-col md:flex-row items-center gap-4 bg-neutral-900 rounded-xl p-4 md:p-6 w-full max-w-2xl shadow-lg min-h-0">
+      <img src={event.image} alt={event.title} className="w-full md:w-1/3 max-h-40 rounded-lg object-cover" />
+      <div className="flex-1 flex flex-col gap-2 text-white">
+        <div className="flex items-center gap-2 mb-1">
+          <div className="bg-white text-red-600 rounded-lg px-3 py-1 text-center font-bold text-base">
+            <div className="text-xs">{event.dateShortMonth}</div>
+            <div className="text-xl leading-none">{event.dateDay}</div>
+          </div>
+          <h3 className="text-xl md:text-2xl font-semibold leading-tight">{event.title}</h3>
+        </div>
+        <div className="flex items-center gap-1 text-base">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-red-600">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6.75a6 6 0 11-7.5 0m7.5 0A6 6 0 006.75 12v.75a3.75 3.75 0 003.75 3.75h3a3.75 3.75 0 003.75-3.75V12a6 6 0 00-7.5-5.25" />
+          </svg>
+          <span>{event.location}</span>
+        </div>
+        <div className="text-base">
+          <span className="font-medium">Time:</span> {event.time}
+        </div>
+      </div>
+    </div>
+  );
+}
 import { Poppins } from 'next/font/google';
 import { motion } from 'framer-motion';
+
 import Carousel from '../components/Carousel';
+
+// Dummy events array (to be managed/updated from admin UI later)
+const events = [
+  {
+    title: 'Revolutionizing Software Quality: AI, Shift Left & DevOps Acceleration',
+    date: '2025-06-04',
+    dateShortMonth: 'JUN',
+    dateDay: '04',
+    location: 'OneEleven, 325 Front St W, Toronto, Ontario, Canada',
+    time: '12:00 pm - 5:00 pm',
+    image: '/events/2025-june-toronto.jpg',
+  },
+  {
+    title: 'CQTA Annual Conference 2024',
+    date: '2024-10-15',
+    dateShortMonth: 'OCT',
+    dateDay: '15',
+    location: 'Toronto, ON',
+    time: '9:00 am - 6:00 pm',
+    image: '/events/2024-oct-toronto.jpg',
+  },
+  {
+    title: 'Agile Testing Workshop',
+    date: '2024-08-20',
+    dateShortMonth: 'AUG',
+    dateDay: '20',
+    location: 'Vancouver, BC',
+    time: '10:00 am - 3:00 pm',
+    image: '/events/2024-aug-vancouver.jpg',
+  },
+  {
+    title: 'AI in Testing Seminar',
+    date: '2024-06-10',
+    dateShortMonth: 'JUN',
+    dateDay: '10',
+    location: 'Montreal, QC',
+    time: '1:00 pm - 5:00 pm',
+    image: '/events/2024-jun-montreal.jpg',
+  },
+  {
+    title: 'Automation Testing Bootcamp',
+    date: '2025-03-20',
+    dateShortMonth: 'MAR',
+    dateDay: '20',
+    location: 'Online',
+    time: '10:00 am - 4:00 pm',
+    image: '/events/2025-mar-online.jpg',
+  },
+  {
+    title: 'CQTA Winter Summit 2025',
+    date: '2025-02-15',
+    dateShortMonth: 'FEB',
+    dateDay: '15',
+    location: 'Calgary, AB',
+    time: '9:00 am - 5:00 pm',
+    image: '/events/2025-feb-calgary.jpg',
+  },
+];
 
 const poppins = Poppins({ variable: '--font-poppins', subsets: ['latin'], weight: ['300','400','600','700'] });
 
@@ -116,25 +201,30 @@ export default function Home() {
         transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
       >
         <div className="site-container">
-          <h2 className="text-3xl font-bold text-center mb-12">Previous Events</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-2">CQTA Annual Conference 2024</h3>
-              <p className="text-gray-600 mb-2">Date: October 15, 2024</p>
-              <p className="text-gray-600 mb-2">Location: Toronto, ON</p>
-              <p className="text-gray-700">A comprehensive event featuring keynote speakers, workshops, and networking sessions focused on the latest trends in software quality engineering.</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-2">Agile Testing Workshop</h3>
-              <p className="text-gray-600 mb-2">Date: August 20, 2024</p>
-              <p className="text-gray-600 mb-2">Location: Vancouver, BC</p>
-              <p className="text-gray-700">Hands-on workshop exploring agile testing methodologies and best practices for modern development teams.</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-2">AI in Testing Seminar</h3>
-              <p className="text-gray-600 mb-2">Date: June 10, 2024</p>
-              <p className="text-gray-600 mb-2">Location: Montreal, QC</p>
-              <p className="text-gray-700">Discussion on the role of artificial intelligence and machine learning in automated testing and quality assurance.</p>
+          <h2 className="text-3xl font-bold text-center mb-12">Past Events</h2>
+          <div className="w-full flex justify-center items-center min-h-0">
+            <Carousel
+              slides={
+                [...events]
+                  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+                  .slice(0, 6)
+                  .map((event) => ({
+                    image: event.image,
+                    title: event.title,
+                    subtitle: `${event.location} | ${event.time} | ${new Date(event.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}`,
+                    overlay: 'black',
+                  }))
+              }
+              autoPlay={false}
+              showJoinButton={false}
+            />
+            {/* Overlay the custom event card on top of the carousel image */}
+            <div className="absolute left-0 right-0 top-0 bottom-0 flex items-center justify-center pointer-events-none">
+              <EventCard event={
+                [...events]
+                  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+                  .slice(0, 6)[0]
+              } />
             </div>
           </div>
         </div>

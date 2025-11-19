@@ -15,6 +15,7 @@ type Props = {
   slides?: Slide[];
   autoPlay?: boolean;
   autoPlayInterval?: number;
+  showJoinButton?: boolean;
 };
 
 const defaultSlides: Slide[] = [
@@ -26,7 +27,7 @@ const defaultSlides: Slide[] = [
   },
 ];
 
-export default function Carousel({ slides, autoPlay = true, autoPlayInterval = 5000 }: Props) {
+export default function Carousel({ slides, autoPlay = true, autoPlayInterval = 5000, showJoinButton = true }: Props) {
   const slidesToUse = slides && slides.length ? slides : defaultSlides;
   const [index, setIndex] = useState(0);
   const timer = useRef<number | null>(null);
@@ -65,16 +66,18 @@ export default function Carousel({ slides, autoPlay = true, autoPlayInterval = 5
               <div className="site-container text-center text-white">
                 {s.title && <h2 className="hero-title mb-4">{s.title}</h2>}
                 {s.subtitle && <p className="hero-sub max-w-3xl mx-auto mb-6">{s.subtitle}</p>}
-                <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
-                  <a
-                    href="https://ca.linkedin.com/company/canadian-quality-and-testing-association"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="carousel-btn"
-                  >
-                    Join the community
-                  </a>
-                </div>
+                {showJoinButton && (
+                  <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                    <a
+                      href="https://ca.linkedin.com/company/canadian-quality-and-testing-association"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="carousel-btn"
+                    >
+                      Join the community
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -108,7 +111,8 @@ export default function Carousel({ slides, autoPlay = true, autoPlayInterval = 5
             key={i}
             onClick={() => setIndex(i)}
             aria-label={`Go to slide ${i + 1}`}
-            className={`w-3 h-3 rounded-full ${i === index ? 'bg-primary' : 'bg-accent'}`}
+            className={`w-3 h-3 rounded-full border-2 focus:outline-none transition-colors duration-200 ${i === index ? 'bg-red-600 border-white' : 'bg-white border-gray-400 opacity-70'}`}
+            style={{ boxShadow: i === index ? '0 0 0 2px #cc0000' : undefined }}
           />
         ))}
       </div>
