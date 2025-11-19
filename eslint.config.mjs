@@ -1,9 +1,10 @@
-import { defineConfig, globalIgnores } from "eslint/config";
-// Use explicit .js subpath imports so Node ESM resolution works correctly.
-import nextVitals from "eslint-config-next/core-web-vitals.js";
-import nextTs from "eslint-config-next/typescript.js";
 
-const eslintConfig = defineConfig([
+const { defineConfig, globalIgnores } = require("eslint/config");
+const nextVitals = require("eslint-config-next/core-web-vitals");
+const nextTs = require("eslint-config-next/typescript");
+
+
+module.exports = defineConfig([
   ...nextVitals,
   ...nextTs,
   // Override default ignores of eslint-config-next.
@@ -15,5 +16,3 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
   ]),
 ]);
-
-export default eslintConfig;
