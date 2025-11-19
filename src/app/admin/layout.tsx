@@ -24,7 +24,6 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
             <SignedOut>
               <div style={{ display: 'inline-block', background: '#ff5252', borderRadius: '0.5rem', padding: '0.5rem 1.5rem' }}>
                 <SignInButton
-                  afterSignInUrl="/admin"
                   mode="modal"
                   // @ts-ignore
                   style={{ color: '#fff', fontWeight: 600, fontSize: '1rem', background: 'none', border: 'none', boxShadow: 'none', cursor: 'pointer' }}
