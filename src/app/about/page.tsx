@@ -70,8 +70,8 @@ export default function About() {
   return (
     <div className="bg-gray-50">
       <Hero
-        title="Empowering Excellence, Elevating Quality: Canada's Hub for Testing Innovation"
-        subtitle=""
+        title="Canada's Hub for Testing Innovation"
+        subtitle="Connecting Quality Engineering Professionals Across the Nation"
         image="/about-hero.jpg"
         overlay="red"
         ctaText="Join the Community"
