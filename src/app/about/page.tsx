@@ -76,15 +76,15 @@ export default function About() {
       </section>
 
       {/* Team Behind the Scene */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-900 text-white">
         <div className="site-container max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-10 text-center text-canada-red">Team Behind the Scene</h2>
+          <h2 className="text-3xl font-extrabold mb-10 text-center" style={{ color: '#fff' }}>Team Behind the Scene</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 justify-items-center">
             {TEAM.map((member) => (
               <div key={member.name} className="flex flex-col items-center text-center">
-                <img src={member.image} alt={member.name} className="w-32 h-32 rounded-full object-cover mb-4 shadow-md border-4 border-gray-100" />
-                <div className="font-bold text-lg text-gray-900">{member.name}</div>
-                <div className="text-gray-600 text-sm mt-1">{member.title}</div>
+                <img src={member.image} alt={member.name} className="w-32 h-32 rounded-full object-cover mb-4 shadow-md border-4 border-white" />
+                <div className="font-bold text-lg text-white">{member.name}</div>
+                <div className="text-gray-300 text-sm mt-1">{member.title}</div>
               </div>
             ))}
           </div>
