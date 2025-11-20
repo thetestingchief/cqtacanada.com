@@ -66,12 +66,56 @@ export default function About() {
       />
 
       {/* What We Stand For */}
-      <section className="py-16">
-        <div className="site-container max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-6 text-center text-canada-red">What We Stand For</h2>
-          <p className="text-gray-700 text-lg text-center mb-8">
-            CQTA is dedicated to advancing software quality engineering and building a thriving community of testing professionals across Canada. We believe in mentorship, collaboration, and innovation to elevate the standards of quality engineering nationwide.
-          </p>
+      <section className="py-16 bg-white">
+        <div className="site-container max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-14" style={{ color: '#23242a' }}>What We Stand For</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {/* Vision */}
+            <div className="flex flex-col items-center bg-gray-50 rounded-2xl p-10 shadow-md">
+              <div className="flex items-center justify-center w-20 h-20 rounded-full bg-white shadow-lg mb-8 border-2 border-gray-200">
+                {/* Bulb Icon */}
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 32 32" width="40" height="40">
+                  <path d="M16 22v2m-2 0h4" stroke="#cc0000" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M16 20c-3.314 0-6-2.686-6-6 0-3.314 2.686-6 6-6s6 2.686 6 6c0 3.314-2.686 6-6 6z" stroke="#cc0000" strokeWidth="2"/>
+                  <circle cx="16" cy="16" r="1.5" fill="#cc0000" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-4" style={{ color: '#23242a' }}>Vision</h3>
+              <p className="text-lg text-center text-gray-800">
+                Create a dynamic ecosystem that inspires growth, empowers individuals, advances quality, cultivates excellence, and ignites Canadian productivity and innovation.
+              </p>
+            </div>
+            {/* Mission */}
+            <div className="flex flex-col items-center bg-gray-50 rounded-2xl p-10 shadow-md">
+              <div className="flex items-center justify-center w-20 h-20 rounded-full bg-white shadow-lg mb-8 border-2 border-gray-200">
+                {/* Target Icon */}
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 32 32" width="40" height="40">
+                  <circle cx="16" cy="16" r="10" stroke="#cc0000" strokeWidth="2" />
+                  <circle cx="16" cy="16" r="4" stroke="#cc0000" strokeWidth="2" />
+                  <path d="M16 6v2m0 16v2m10-10h-2M6 16H4" stroke="#cc0000" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-4" style={{ color: '#23242a' }}>Mission</h3>
+              <p className="text-lg text-center text-gray-800">
+                Create a place where individuals are empowered to learn, connect with industry peers, and contribute to the advancement of quality practices!
+              </p>
+            </div>
+            {/* Goal */}
+            <div className="flex flex-col items-center bg-gray-50 rounded-2xl p-10 shadow-md">
+              <div className="flex items-center justify-center w-20 h-20 rounded-full bg-white shadow-lg mb-8 border-2 border-gray-200">
+                {/* Diamond Icon */}
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 32 32" width="40" height="40">
+                  <path d="M6 16l10-10 10 10-10 16-10-16z" stroke="#cc0000" strokeWidth="2" fill="none" />
+                  <path d="M12 16l4 6 4-6" stroke="#cc0000" strokeWidth="2" fill="none" />
+                  <path d="M16 6v20" stroke="#cc0000" strokeWidth="2" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-4" style={{ color: '#23242a' }}>Goal</h3>
+              <p className="text-lg text-center text-gray-800">
+                Build awareness of the latest trends, tools, and strategies in quality engineering, and elevate the success stories of Canadian Quality leaders to inspire innovation.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
