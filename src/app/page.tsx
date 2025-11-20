@@ -5,11 +5,16 @@ function EventCard({ event }: { event: typeof events[0] }) {
   return (
     <div className="flex flex-row items-center gap-4 bg-neutral-900 rounded-xl p-3 w-full max-w-2xl shadow-lg min-h-0">
       <div className="flex-shrink-0 w-24 h-24 md:w-32 md:h-32 rounded-lg overflow-hidden bg-gray-200 flex items-center justify-center">
-        <img
+        <Image
           src={event.image || placeholder}
           alt={event.title}
+          width={128}
+          height={128}
           className="w-full h-full object-cover"
+          style={{ objectFit: 'cover' }}
           onError={e => { (e.target as HTMLImageElement).src = placeholder; }}
+          unoptimized={false}
+          priority={false}
         />
       </div>
       <div className="flex-1 flex flex-col gap-1 text-white">
@@ -35,6 +40,7 @@ function EventCard({ event }: { event: typeof events[0] }) {
 }
 import { Poppins } from 'next/font/google';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 import Carousel from '../components/Carousel';
 
@@ -101,16 +107,23 @@ const poppins = Poppins({ variable: '--font-poppins', subsets: ['latin'], weight
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      <Carousel
-        slides={[{
-          image: '/hero-canada.jpg',
-          title: 'Empowering Quality Engineering in Canada',
-          subtitle: 'Join the fastest-growing community of QE professionals shaping the future of testing.',
-          overlay: 'red',
-          ctaText: 'Join the community',
-          ctaLink: 'https://ca.linkedin.com/company/canadian-quality-and-testing-association',
-        }]}
-      />
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+      >
+        <Carousel
+          slides={[{
+            image: '/hero-canada.jpg',
+            title: 'Empowering Quality Engineering in Canada',
+            subtitle: 'Join the fastest-growing community of QE professionals shaping the future of testing.',
+            overlay: 'red',
+            ctaText: 'Join the community',
+            ctaLink: 'https://ca.linkedin.com/company/canadian-quality-and-testing-association',
+          }]}
+        />
+      </motion.div>
 
       {/* Main Content Sections */}
       <motion.section

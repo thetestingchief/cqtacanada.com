@@ -1,4 +1,5 @@
-'use client';
+"use client";
+import { motion } from 'framer-motion';
 
 import { useState } from 'react';
 
@@ -28,16 +29,28 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Hero title="Contact Us" subtitle="Have questions? Reach out to the CQTA community." image="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1200&q=80" />
-      <div className="py-16">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+      >
+        <Hero title="Contact Us" subtitle="Have questions? Reach out to the CQTA community." image="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1200&q=80" />
+      </motion.div>
+      <motion.div
+        className="py-16"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+      >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white p-8 rounded-lg shadow-md">
-          <p className="text-gray-600 mb-6 text-center">
-            Have questions about CQTA? Want to get involved? We'd love to hear from you.
-          </p>
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
+            <p className="text-gray-600 mb-6 text-center">
+              Have questions about CQTA? Want to get involved? We'd love to hear from you.
+            </p>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                   Name
                 </label>
@@ -102,10 +115,10 @@ export default function Contact() {
                 Send Message
               </button>
             </div>
-          </form>
+            </form>
+          </div>
         </div>
-        </div>
-        </div>
-      </div>
+      </motion.div>
+    </div>
   );
 }

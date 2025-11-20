@@ -1,3 +1,5 @@
+# Next.js Coding Standards
+- Always place the `'use client'` directive at the very top of any client component file, before any imports or code. This prevents build errors in Next.js 13+ and 16+.
 <!-- Use this file to provide workspace-specific custom instructions to Copilot. For more details, visit https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilotinstructionsmd-file -->
 - [x] Verify that the copilot-instructions.md file in the .github directory is created.
 
