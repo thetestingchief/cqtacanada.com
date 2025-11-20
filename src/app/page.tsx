@@ -107,16 +107,23 @@ const poppins = Poppins({ variable: '--font-poppins', subsets: ['latin'], weight
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      <Carousel
-        slides={[{
-          image: '/hero-canada.jpg',
-          title: 'Empowering Quality Engineering in Canada',
-          subtitle: 'Join the fastest-growing community of QE professionals shaping the future of testing.',
-          overlay: 'red',
-          ctaText: 'Join the community',
-          ctaLink: 'https://ca.linkedin.com/company/canadian-quality-and-testing-association',
-        }]}
-      />
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+      >
+        <Carousel
+          slides={[{
+            image: '/hero-canada.jpg',
+            title: 'Empowering Quality Engineering in Canada',
+            subtitle: 'Join the fastest-growing community of QE professionals shaping the future of testing.',
+            overlay: 'red',
+            ctaText: 'Join the community',
+            ctaLink: 'https://ca.linkedin.com/company/canadian-quality-and-testing-association',
+          }]}
+        />
+      </motion.div>
 
       {/* Main Content Sections */}
       <motion.section

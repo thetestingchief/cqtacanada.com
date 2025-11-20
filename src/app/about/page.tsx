@@ -69,14 +69,20 @@ const TEAM = [
 export default function About() {
   return (
     <div className="bg-gray-50">
-      <Hero
-        title="Canada's Hub for Testing Innovation"
-        subtitle="Connecting Quality Engineering Professionals Across the Nation"
-        image="/about-hero.jpg"
-        overlay="red"
-        ctaText="Join the Community"
-        ctaLink="https://ca.linkedin.com/company/canadian-quality-and-testing-association"
-      />
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+      >
+        <Hero
+          title="Canada's Hub for Testing Innovation"
+          subtitle="Connecting Quality Engineering Professionals Across the Nation"
+          image="/about-hero.jpg"
+          overlay="red"
+          ctaText="Join the Community"
+          ctaLink="https://ca.linkedin.com/company/canadian-quality-and-testing-association"
+        />
+      </motion.div>
 
       {/* What We Stand For */}
       <motion.section

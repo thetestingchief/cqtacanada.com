@@ -5,7 +5,13 @@ import Hero from "../../components/Hero";
 export default function Partnership() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <Hero title="Partnership Opportunities" subtitle="Partner with CQTA to reach Canada's software quality community." image="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=1200&q=80" />
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+      >
+        <Hero title="Partnership Opportunities" subtitle="Partner with CQTA to reach Canada's software quality community." image="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=1200&q=80" />
+      </motion.div>
       <motion.div
         className="py-16"
         initial={{ opacity: 0, y: 40 }}
