@@ -82,7 +82,6 @@ export default function PartnerEvents() {
             ))}
           </div>
         </motion.section>
-        </div>
       </div>
     </div>
   );
