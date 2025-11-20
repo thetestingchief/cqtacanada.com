@@ -7,57 +7,67 @@ const TEAM = [
     name: "Parasar Saha",
     title: "Founder and CEO, Digy4",
     image: "/about/parasar-saha.jpg",
+    linkedin: "https://www.linkedin.com/in/parasarsaha/"
   },
   {
     name: "Chandni Tibrewal",
     title: "Sr. Quality Engineering Manager | Moneris",
     image: "/about/chandni-tibrewal.jpg",
+    linkedin: "https://www.linkedin.com/in/chandni-tibrewal-3044a353/"
   },
   {
     name: "Juan Orlarte",
     title: "Founder and CEO, Digita11yAccessible",
     image: "/about/juan-orlarte.jpg",
+    linkedin: "https://www.linkedin.com/in/juanolarte/"
   },
   {
     name: "Vicky Hicks",
     title: "Director, Global Quality Engineering (QE) Practice",
     image: "/about/vicky-hicks.jpg",
+    linkedin: "https://www.linkedin.com/in/vickyahicks/"
   },
   {
     name: "Ari Rowland",
     title: "Accenture QE Practice Head",
     image: "/about/ari-rowland.jpg",
+    linkedin: "https://www.linkedin.com/in/ari-rowland-4333437/"
   },
   {
     name: "Sanjeev Balodia",
     title: "QA & AI Evangelist – HCL",
     image: "/about/sanjeev-balodia.jpg",
+    linkedin: "https://www.linkedin.com/in/sanjeev-balodia/"
   },
   {
     name: "Navya Vohra",
     title: "iOS App Developer Mentor at Apple and CEC",
     image: "/about/navya-vohra.jpg",
+    linkedin: "https://www.linkedin.com/in/navyavohra/"
   },
   {
     name: "Sivakumar Ganesan",
     title: "Senior Manager, Quality Engineering",
     image: "/about/sivakumar-ganesan.jpg",
+    linkedin: "https://www.linkedin.com/in/sivakumarnganesan/"
   },
   {
     name: "Pushpinder Malhotra",
     title: "Senior QA Automation Manager for Northbridge Insurance",
     image: "/about/pushpinder-malhotra.jpg",
+    linkedin: "https://www.linkedin.com/in/pushpinder-malhotra-8465517/"
   },
   {
     name: "Ayush Anand",
     title: "Quality Engineering and DevOps leader",
     image: "/about/ayush-anand.jpg",
+    linkedin: "https://www.linkedin.com/in/ayush-anand-8aa89918/"
   },
 ];
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="bg-gray-50">
       <Hero
         title="Empowering Excellence, Elevating Quality: Canada's Hub for Testing Innovation"
         subtitle=""
@@ -72,7 +82,6 @@ export default function About() {
         className="py-16 bg-white"
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
         <div className="site-container max-w-6xl mx-auto">
@@ -132,18 +141,26 @@ export default function About() {
         className="py-16 bg-gray-900 text-white"
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
         <div className="site-container max-w-6xl mx-auto">
           <h2 className="text-3xl font-extrabold mb-10 text-center" style={{ color: '#fff' }}>Team Behind the Scene</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 justify-items-center">
             {TEAM.map((member) => (
-              <div key={member.name} className="flex flex-col items-center text-center">
+              <motion.a
+                key={member.name}
+                href={member.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.08, boxShadow: "0 8px 32px rgba(204,0,0,0.18)" }}
+                transition={{ type: "spring", stiffness: 300, damping: 18 }}
+                className="flex flex-col items-center text-center cursor-pointer focus:outline-none"
+                style={{ textDecoration: 'none' }}
+              >
                 <img src={member.image} alt={member.name} className="w-32 h-32 rounded-full object-cover mb-4 shadow-md border-4 border-white" />
                 <div className="font-bold text-lg text-white">{member.name}</div>
                 <div className="text-gray-300 text-sm mt-1">{member.title}</div>
-              </div>
+              </motion.a>
             ))}
           </div>
         </div>
@@ -154,7 +171,6 @@ export default function About() {
         className="py-24 bg-white"
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
         <div className="site-container max-w-7xl mx-auto">
