@@ -136,21 +136,60 @@ export default function About() {
       </section>
 
       {/* Our Pillars */}
-      <section className="py-16">
-        <div className="site-container max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-6 text-center text-canada-red">Our Pillars</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-            <div className="bg-gray-100 rounded-lg p-6 text-center shadow">
-              <h3 className="text-xl font-bold mb-2 text-canada-red">Connect</h3>
-              <p className="text-gray-700">Mentorship, networking, and events to foster professional growth and strengthen the Canadian IT sector.</p>
+      <section className="py-24 bg-white">
+        <div className="site-container max-w-7xl mx-auto">
+          <div className="flex flex-col items-center justify-center text-center">
+            <h2 className="text-4xl font-bold mb-8" style={{ color: '#23242a' }}>Our Pillars</h2>
+            <p className="text-lg text-gray-800 mb-12 max-w-3xl">
+              CQTA’s pillars—Connect, Collaborate, Build—foster a thriving Quality Engineering community. By promoting mentorship, networking, and events, CQTA enhances professional growth and strengthens the Canadian IT sector.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Connect */}
+            <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-start">
+              <div className="mb-6">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="24" cy="24" r="22" stroke="#cc0000" strokeWidth="2" fill="#fff" />
+                  <path d="M16 24l4 4 8-8" stroke="#cc0000" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <circle cx="24" cy="24" r="8" stroke="#cc0000" strokeWidth="2" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-2" style={{ color: '#23242a' }}>Connect</h3>
+              <p className="text-gray-700">
+                Creating opportunities for professionals to build relationships and share knowledge in the Quality Engineering community.
+              </p>
             </div>
-            <div className="bg-gray-100 rounded-lg p-6 text-center shadow">
-              <h3 className="text-xl font-bold mb-2 text-canada-red">Collaborate</h3>
-              <p className="text-gray-700">Promoting collaboration and knowledge sharing to advance quality engineering practices.</p>
+            {/* Collaborate */}
+            <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-start">
+              <div className="mb-6">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="8" y="8" width="32" height="32" rx="8" stroke="#cc0000" strokeWidth="2" fill="#fff" />
+                  <circle cx="16" cy="16" r="3" stroke="#cc0000" strokeWidth="2" />
+                  <circle cx="32" cy="16" r="3" stroke="#cc0000" strokeWidth="2" />
+                  <circle cx="16" cy="32" r="3" stroke="#cc0000" strokeWidth="2" />
+                  <circle cx="32" cy="32" r="3" stroke="#cc0000" strokeWidth="2" />
+                  <path d="M16 16L32 16M16 32L32 32M16 16L16 32M32 16L32 32" stroke="#cc0000" strokeWidth="1.5" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-2" style={{ color: '#23242a' }}>Collaborate</h3>
+              <p className="text-gray-700">
+                We foster teamwork and collaboration, empowering professionals to share best practices and solve problems together.
+              </p>
             </div>
-            <div className="bg-gray-100 rounded-lg p-6 text-center shadow">
-              <h3 className="text-xl font-bold mb-2 text-canada-red">Build</h3>
-              <p className="text-gray-700">Building a vibrant, innovative, and inclusive community for quality engineering professionals.</p>
+            {/* Build */}
+            <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-start">
+              <div className="mb-6">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="24" cy="24" r="22" stroke="#cc0000" strokeWidth="2" fill="#fff" />
+                  <path d="M24 14v10l6 6" stroke="#cc0000" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M18 34h12" stroke="#cc0000" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M24 34v-4" stroke="#cc0000" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-2" style={{ color: '#23242a' }}>Build</h3>
+              <p className="text-gray-700">
+                We foster growth and innovation through continuous improvement initiatives and development programs.
+              </p>
             </div>
           </div>
         </div>
