@@ -1,6 +1,7 @@
 'use client';
 
 import Hero from "../../components/Hero";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { generateSponsorshipBrochure } from "../../../lib/pdf-generator";
 
@@ -84,33 +85,59 @@ export default function Sponsorship() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Hero 
-        title="CQTA Sponsorship Opportunities" 
-        subtitle="Partner with CQTA to elevate your brand and contribute to the advancement of quality engineering across the nation." 
-        image="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80" 
-      />
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+      >
+        <Hero 
+          title="CQTA Sponsorship Opportunities" 
+          subtitle="Partner with CQTA to elevate your brand and contribute to the advancement of quality engineering across the nation." 
+          image="/hero-canada.jpg" 
+          overlay="red"
+          ctaText="Become a Sponsor"
+          ctaLink="/contact"
+        />
+      </motion.div>
       
       <div className="py-16">
         <div className="site-container">
           {/* Introduction */}
-          <div className="text-center mb-16 max-w-4xl mx-auto">
+          <motion.div
+            className="text-center mb-16 max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
+          >
             <p className="text-lg text-gray-700 leading-relaxed">
               Our sponsorship packages provide exceptional opportunities for brand exposure, industry leadership, 
               and engagement with Canada&apos;s premier quality engineering community.
             </p>
-          </div>
+          </motion.div>
 
           {/* Sponsorship Cards - Top Row: Executive + Gold */}
-          <div className="mb-8">
+          <motion.div
+            className="mb-8"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
+          >
             <div className="grid md:grid-cols-2 gap-8">
               {sponsorshipLevels.slice(0, 2).map((tier, index) => (
-                <div 
-                  key={index} 
+                <motion.div
+                  key={index}
                   className={`bg-white rounded-lg shadow-xl overflow-hidden transition-transform hover:scale-105 ${
                     tier.highlight ? 'ring-4 ring-canada-red' : ''
                   } ${
                     tier.popular ? 'ring-4 ring-gray-700' : ''
                   }`}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.7, delay: 0.2 + index * 0.1, ease: 'easeOut' }}
                 >
                   {tier.highlight && (
                     <div className="bg-canada-red text-white text-center py-2 font-semibold text-sm">
@@ -126,7 +153,6 @@ export default function Sponsorship() {
                     <h3 className="text-2xl font-bold text-center mb-2 text-gray-800">{tier.level} Sponsor</h3>
                     <p className="text-3xl font-bold text-canada-red text-center mb-4">{tier.price}</p>
                     <p className="text-sm text-gray-600 text-center mb-6 italic min-h-12">{tier.description}</p>
-                    
                     <div className="space-y-3">
                       {tier.features.map((feature, i) => (
                         <div key={i} className="flex items-start">
@@ -138,18 +164,28 @@ export default function Sponsorship() {
                       ))}
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Sponsorship Cards - Bottom Row: Silver, Bronze, After Hours */}
-          <div className="mb-16">
+          <motion.div
+            className="mb-16"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+          >
             <div className="grid md:grid-cols-3 gap-8">
               {sponsorshipLevels.slice(2).map((tier, index) => (
-                <div 
-                  key={index} 
+                <motion.div
+                  key={index}
                   className="bg-white rounded-lg shadow-xl overflow-hidden transition-transform hover:scale-105"
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.7, delay: 0.25 + index * 0.1, ease: 'easeOut' }}
                 >
                   <div className="p-8">
                     <h3 className="text-2xl font-bold text-center mb-2 text-gray-800">{tier.level} Sponsor</h3>
@@ -166,7 +202,6 @@ export default function Sponsorship() {
                       <p className="text-3xl font-bold text-canada-red text-center mb-4">{tier.price}</p>
                     )}
                     <p className="text-sm text-gray-600 text-center mb-6 italic min-h-12">{tier.description}</p>
-                    
                     <div className="space-y-3">
                       {tier.features.map((feature, i) => (
                         <div key={i} className="flex items-start">
@@ -178,14 +213,20 @@ export default function Sponsorship() {
                       ))}
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Call to Action */}
-          <div className="bg-gradient-to-r from-canada-red to-red-700 text-white rounded-lg shadow-xl p-12 text-center">
-            <h2 className="text-3xl font-bold mb-4">Join CQTA as a Sponsor</h2>
+          <motion.div
+            className="bg-gradient-to-r from-canada-red to-red-700 text-white rounded-lg shadow-xl p-12 text-center"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}
+          >
+            <h2 className="text-3xl font-bold mb-4 text-white" style={{ color: '#fff', fontWeight: 700, marginBottom: '1rem' }}>Join CQTA as a Sponsor</h2>
             <p className="text-xl mb-8 max-w-3xl mx-auto">
               Showcase your commitment to quality engineering, connect directly with industry professionals, 
               and gain exceptional recognition through a trusted national platform.
@@ -204,7 +245,7 @@ export default function Sponsorship() {
                 Download Brochure
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
