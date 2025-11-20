@@ -1,6 +1,7 @@
 "use client";
 import Hero from "../../components/Hero";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const TEAM = [
   {
@@ -157,7 +158,16 @@ export default function About() {
                 className="flex flex-col items-center text-center cursor-pointer focus:outline-none"
                 style={{ textDecoration: 'none' }}
               >
-                <img src={member.image} alt={member.name} className="w-32 h-32 rounded-full object-cover mb-4 shadow-md border-4 border-white" />
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  width={128}
+                  height={128}
+                  className="w-32 h-32 rounded-full object-cover mb-4 shadow-md border-4 border-white"
+                  style={{ objectFit: 'cover' }}
+                  unoptimized={false}
+                  priority={false}
+                />
                 <div className="font-bold text-lg text-white">{member.name}</div>
                 <div className="text-gray-300 text-sm mt-1">{member.title}</div>
               </motion.a>

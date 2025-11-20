@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -20,7 +21,7 @@ export default function Footer() {
           {/* Logo */}
           <div className="flex flex-col items-center lg:items-start">
             <Link href="/" className="flex items-center mb-3">
-              <img src="/main-logo.svg" alt="CQTA" className="h-16 w-auto" />
+                <Image src="/main-logo.svg" alt="CQTA" width={64} height={64} className="h-16 w-auto" priority />
             </Link>
             <div className="text-base text-center lg:text-left brand-text" style={{ color: '#cc0000' }}>
               <div>Canadian Quality</div>

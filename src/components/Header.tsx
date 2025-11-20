@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import Image from 'next/image';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +16,7 @@ export default function Header() {
         <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
             <Link href="/" className="flex items-center">
-                  <img src="/main-logo.svg" alt="CQTA" className="h-14 w-auto object-contain" />
+                  <Image src="/main-logo.svg" alt="CQTA" width={56} height={56} className="h-14 w-auto object-contain" priority />
               <div className="ml-3 hidden sm:block brand-text">
                 <div>Canadian Quality</div>
                 <div className="line-small">and Testing Association</div>
